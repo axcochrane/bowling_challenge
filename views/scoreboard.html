@@ -4,10 +4,13 @@
 <meta charset='utf-8'>
   <title>Bowling Challenge!</title>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="../src/bowling.js"></script>
+  <script src="../src/BowlingGame.js"></script>
+  <script src="../src/scoreboard.js"></script>
 </head>
 <body>
   <h1>Bowling Scorecard!</h1>
+  <button id="bowl" type="button" name="bowl">Bowl</button>
+  <p>You knocked down <span id="BowlResult"></span> pins</p>
   <table>
     <tr>
       <th>Frame</th>
@@ -16,13 +19,13 @@
     </tr>
     <tr>
       <td>1</td>
-      <td></td>
-      <td></td>
+      <td id="0"></td>
+      <td id="1"></td>
     </tr>
     <tr>
       <td>2</td>
-      <td></td>
-      <td></td>
+      <td id="2"></td>
+      <td id="3"></td>
     </tr>
     <tr>
       <td>3</td>
@@ -53,7 +56,16 @@
       <td>8</td>
       <td></td>
       <td></td>
+    </tr>    <tr>
+      <td>9</td>
+      <td></td>
+      <td></td>
+    </tr>    <tr>
+      <td>10</td>
+      <td></td>
+      <td></td>
     </tr>
   </table>
+  
 </body>
 </html>
