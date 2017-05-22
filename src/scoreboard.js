@@ -2,13 +2,18 @@ $(document).ready(function(){
 
   var game = new BowlingGame();
   var bowlCount = 0;
+  var frame = new Frame();
 
-  $('#bowl').click(function(clickEvent) {
-    $('#BowlResult').text(game.bowl());
-    $("#" + bowlCount).text(game.bowls[count]);
-    count += 1;
+  $('#roll_button').click(function(clickEvent) {
+    $('#roll_outcome').text(frame.takeTurn());
   });
 
+  $(document).on("click", ".score-button", function() {
+    var pinsKnockedOver = parseInt(this.id);
+    game.roll(pinsKnockedOver);
+    updateScorecard();
+    reRenderButtons(pinsKnockedOver);
+  });
 
 
 });

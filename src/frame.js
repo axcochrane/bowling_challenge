@@ -14,7 +14,7 @@ function Frame(frameNumber) {
     this.pinsRemaining -= pinsHit; 
     this._updateRollCount();
     this._updateFinalScore();
-
+    return 'You knocked down ' + pinsHit + ' pins!'
   };
 
 
@@ -34,10 +34,12 @@ function Frame(frameNumber) {
       for(var i in this.rollResults) { 
         this.finalScore += this.rollResults[i]; 
       }
+    }
+  };
            
     
          
-  }
+  
 
 
 
