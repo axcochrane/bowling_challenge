@@ -13,8 +13,8 @@ function Frame(frameNumber) {
     this.rollResults.push(pinsHit);
     this.pinsRemaining -= pinsHit; 
     this._updateRollCount();
-    //   this.pinsRemaining === 0;
-    //   this.remainingRolls -= 1;
+    this._updateFinalScore();
+
   };
 
 
@@ -24,15 +24,19 @@ function Frame(frameNumber) {
 
   }
 
-  Frame.prototype.updateFinalScore = function() {
-    // if remainingRolls === 0;
-    finalScore = rollsResult.sum; 
-      
-  }
-
   Frame.prototype._updateRollCount = function() {
       if (this.pinsRemaining === 0) {this.remainingRolls += 1}
       else {this.remainingRolls -= 1}
+  }
+
+  Frame.prototype._updateFinalScore = function() {
+    if (this.remainingRolls === 0) {
+      for(var i in this.rollResults) { 
+        this.finalScore += this.rollResults[i]; 
+      }
+           
+    
+         
   }
 
 

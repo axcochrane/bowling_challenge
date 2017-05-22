@@ -44,5 +44,22 @@ describe('A frame', function(){
     expect(frame.remainingRolls).toEqual(1); 
   });
 
+  it('adds two rolls together to make one frame',function(){
+    // spyOn(bowl, 'roll').and.returnValue(8);
+    frame.takeTurn();
+    expect(frame.pinsRemaining).toEqual(5); 
+  
+  });  it('creates a final score when there are no rolls left',function(){
+    bowl = jasmine.createSpyObj('Bowl', ['roll']);
+    frame.takeTurn();
+    frame.takeTurn();
+    frame.takeTurn();
+    expect(frame.finalScore).toEqual(30); 
+  
+  });  it('adds two rolls together to make one frame',function(){
+    frame.takeTurn();
+    expect(frame.pinsRemaining).toEqual(5); 
+  });
+
 });
 
